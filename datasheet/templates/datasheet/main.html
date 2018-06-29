@@ -1,13 +1,19 @@
-{% extends 'viewer/base.html' %}
+{% extends 'datasheet/base.html' %}
+
+{% block navbar %}
+<li class="active"><a href="#">Home</a></li>
+{% endblock %}
+
+{% block sidebar %}
+<ul class="nav nav-pills nav-stacked">
+  <li class="active"><a href="#">Home</a></li>
+  <li><a href="{% url 'list' %}">Upload</a></li>
+</ul>
+{% endblock %}
 
 {% block content %}
-    {% for post in posts %}
-        <div class="post">
-            <div class="date">
-                {{ post.stock_abbr }}
-            </div>
-            <h1><a href="">{{ post.company }}</a></h1>
-            <p>{{ post.director|linebreaksbr }}</p>
-        </div>
-    {% endfor %}
+    <div class="post">
+        <h2>Hi this is main page</h2>
+        <p>{{ message }}</p>
+    </div>
 {% endblock %}
